@@ -4,294 +4,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>上海慧逸电气设计中心</title>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-...省略哈希..." crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    /* 淡入动画定义 */
-    @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
+    @keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
     .fade-in { animation: fadeIn 0.8s ease-in-out both; }
   </style>
 </head>
 <body class="font-sans text-gray-800">
-  <!-- 顶部导航栏 -->
-  <header class="w-full bg-white/80 backdrop-blur fixed top-0 z-50 shadow-sm">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-      <!-- 公司名称/LOGO -->
-      <div class="text-xl font-bold">
-        <a href="#home" class="hover:text-blue-600">上海慧逸电气设计中心</a>
-      </div>
-      <!-- 主导航菜单 -->
-      <nav class="hidden md:flex space-x-6 text-sm">
-        <a href="#home" class="hover:text-blue-600"><span class="lang-zh">首页</span><span class="lang-en hidden">Home</span></a>
-        <a href="#about" class="hover:text-blue-600"><span class="lang-zh">公司简介</span><span class="lang-en hidden">About Us</span></a>
-        <a href="#services" class="hover:text-blue-600"><span class="lang-zh">主营业务</span><span class="lang-en hidden">Services</span></a>
-        <a href="#process" class="hover:text-blue-600"><span class="lang-zh">服务流程</span><span class="lang-en hidden">Process</span></a>
-        <a href="#team" class="hover:text-blue-600"><span class="lang-zh">技术团队</span><span class="lang-en hidden">Team</span></a>
-        <a href="#products" class="hover:text-blue-600"><span class="lang-zh">产品展示</span><span class="lang-en hidden">Products</span></a>
-        <a href="#contact" class="hover:text-blue-600"><span class="lang-zh">联系我们</span><span class="lang-en hidden">Contact Us</span></a>
-      </nav>
-      <!-- 移动端菜单按钮（可选，实现需JS） -->
-      <button class="md:hidden text-xl" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
-      <!-- 语言切换按钮 -->
-      <div class="ml-4">
-        <button id="lang-zh-btn" class="text-sm px-2 py-1 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white" onclick="switchLang('zh')">中文</button>
-        <button id="lang-en-btn" class="text-sm px-2 py-1 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white" onclick="switchLang('en')">EN</button>
-      </div>
-    </div>
-  </header>
 
-  <!-- 首页横幅 Section -->
-  <section id="home" class="relative w-full h-[500px] md:h-[600px] bg-gray-800 text-white">
-    <!-- 背景图像 -->
-    <img src="【31†】" alt="Transformer maintenance scene" class="absolute inset-0 w-full h-full object-cover brightness-75">
-    <!-- 覆盖层内容 -->
-    <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
-      <h1 class="text-3xl md:text-5xl font-bold mb-4 fade-in">
-        <span class="lang-zh">电力变压器维修与升级专家</span>
-        <span class="lang-en hidden">Experts in Transformer Maintenance & Upgrades</span>
-      </h1>
-      <p class="text-lg md:text-2xl mb-8 fade-in">
-        <span class="lang-zh">确保您的电力系统安全高效运行</span>
-        <span class="lang-en hidden">Ensuring Your Power Systems Run Safely and Efficiently</span>
-      </p>
-      <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-base font-medium px-6 py-3 rounded transition fade-in">
-        <span class="lang-zh">联系我们</span>
-        <span class="lang-en hidden">Contact Us</span>
-      </a>
+<!-- 导航 + 语言切换 -->
+<header class="w-full bg-white/80 backdrop-blur fixed top-0 z-50 shadow-sm">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+    <div class="text-xl font-bold"><a href="#home" class="hover:text-blue-600">上海慧逸电气设计中心</a></div>
+    <nav class="hidden md:flex space-x-6 text-sm">
+      <a href="#home" class="hover:text-blue-600"><span class="lang-zh">首页</span><span class="lang-en hidden">Home</span></a>
+      <a href="#about" class="hover:text-blue-600"><span class="lang-zh">公司简介</span><span class="lang-en hidden">About Us</span></a>
+      <a href="#services" class="hover:text-blue-600"><span class="lang-zh">主营业务</span><span class="lang-en hidden">Services</span></a>
+      <a href="#process" class="hover:text-blue-600"><span class="lang-zh">服务流程</span><span class="lang-en hidden">Process</span></a>
+      <a href="#team" class="hover:text-blue-600"><span class="lang-zh">技术团队</span><span class="lang-en hidden">Team</span></a>
+      <a href="#products" class="hover:text-blue-600"><span class="lang-zh">产品展示</span><span class="lang-en hidden">Products</span></a>
+      <a href="#contact" class="hover:text-blue-600"><span class="lang-zh">联系我们</span><span class="lang-en hidden">Contact</span></a>
+    </nav>
+    <div class="ml-4">
+      <button id="lang-zh-btn" class="text-sm px-2 py-1 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white" onclick="switchLang('zh')">中文</button>
+      <button id="lang-en-btn" class="text-sm px-2 py-1 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white" onclick="switchLang('en')">EN</button>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- 公司简介 Section -->
-  <section id="about" class="max-w-6xl mx-auto px-4 py-12 mt-16">
-    <h2 class="text-2xl font-bold mb-6 text-gray-900"><span class="lang-zh">公司简介</span><span class="lang-en hidden">About Us</span></h2>
-    <p class="leading-relaxed mb-4">
-      <span class="lang-zh">
-        上海慧逸电气设计中心是一家专注于电力变压器维护、检修及升级改造的专业公司。我们致力于通过卓越的工程技术和创新方案，确保电力系统的安全可靠运行。凭借多年行业经验和专业团队，我们为客户提供高质量、高效率的服务与解决方案。
-      </span>
-      <span class="lang-en hidden">
-        Shanghai Huiyi Electrical Design Center is a professional company focused on the maintenance, repair, and upgrading of power transformers. Our mission is to ensure the safe and reliable operation of power systems through excellent engineering and innovative solutions. With years of industry experience and an expert team, we deliver high-quality, efficient services and solutions to our clients.
-      </span>
+<!-- 横幅 -->
+<section id="home" class="relative w-full h-[500px] md:h-[600px] bg-gray-800 text-white mt-16">
+  <img src="https://images.pexels.com/photos/4606795/pexels-photo-4606795.jpeg" alt="Transformer maintenance scene" class="absolute inset-0 w-full h-full object-cover brightness-75">
+  <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4 fade-in">
+      <span class="lang-zh">电力变压器维修与升级专家</span><span class="lang-en hidden">Experts in Transformer Maintenance & Upgrades</span>
+    </h1>
+    <p class="text-lg md:text-2xl mb-8 fade-in">
+      <span class="lang-zh">确保您的电力系统安全高效运行</span><span class="lang-en hidden">Ensuring Your Power Systems Run Safely and Efficiently</span>
     </p>
-    <p class="leading-relaxed">
-      <span class="lang-zh">
-        公司拥有经验丰富的技术团队和完善的服务流程，从初步咨询评估到方案实施和验收，每一步都以客户需求为中心。我们坚持质量第一、技术创新，致力于成为电力变压器服务领域中专业可靠的合作伙伴。
-      </span>
-      <span class="lang-en hidden">
-        Our company is backed by an experienced technical team and a well-defined service process. From initial consultation and assessment to implementation and final inspection, every step is centered on the client’s needs. We uphold a quality-first, innovation-driven approach, aiming to be a professional and reliable partner in the field of power transformer services.
-      </span>
-    </p>
-  </section>
+    <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-base font-medium px-6 py-3 rounded transition fade-in">
+      <span class="lang-zh">联系我们</span><span class="lang-en hidden">Contact Us</span>
+    </a>
+  </div>
+</section>
 
-  <!-- 主营业务 Section -->
-  <section id="services" class="bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-bold mb-6 text-gray-900"><span class="lang-zh">主营业务</span><span class="lang-en hidden">Our Services</span></h2>
-      <ul class="space-y-3 ml-4">
-        <li class="flex items-start">
-          <i class="fa-solid fa-screwdriver-wrench text-blue-600 mr-2 mt-1"></i>
-          <span>
-            <span class="lang-zh font-medium">变压器检修与常规维护</span>
-            <span class="lang-en hidden font-medium">Transformer Overhaul & Regular Maintenance</span>
-          </span>
-        </li>
-        <li class="flex items-start">
-          <i class="fa-solid fa-bolt text-blue-600 mr-2 mt-1"></i>
-          <span>
-            <span class="lang-zh font-medium">变压器性能升级改造</span>
-            <span class="lang-en hidden font-medium">Transformer Performance Upgrades & Retrofits</span>
-          </span>
-        </li>
-        <li class="flex items-start">
-          <i class="fa-solid fa-circle-check text-blue-600 mr-2 mt-1"></i>
-          <span>
-            <span class="lang-zh font-medium">诊断测试与故障维修</span>
-            <span class="lang-en hidden font-medium">Diagnostic Testing & Fault Repair</span>
-          </span>
-        </li>
-      </ul>
+<!-- 公司简介 -->
+<section id="about" class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="text-2xl font-bold mb-6"><span class="lang-zh">公司简介</span><span class="lang-en hidden">About Us</span></h2>
+  <p class="leading-relaxed mb-4">
+    <span class="lang-zh">上海慧逸电气设计中心是一家专注于电力变压器维护、检修及升级改造的专业公司...</span>
+    <span class="lang-en hidden">Shanghai Huiyi Electrical Design Center is a professional company focused on transformer maintenance, repair, and upgrading...</span>
+  </p>
+</section>
+
+<!-- 主营业务 -->
+<section id="services" class="bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-6"><span class="lang-zh">主营业务</span><span class="lang-en hidden">Our Services</span></h2>
+    <ul class="space-y-3 ml-4">
+      <li class="flex items-start"><i class="fa-solid fa-screwdriver-wrench text-blue-600 mr-2 mt-1"></i>
+        <span><span class="lang-zh font-medium">变压器检修与常规维护</span><span class="lang-en hidden font-medium">Transformer Overhaul & Maintenance</span></span></li>
+      <li class="flex items-start"><i class="fa-solid fa-bolt text-blue-600 mr-2 mt-1"></i>
+        <span><span class="lang-zh font-medium">变压器性能升级改造</span><span class="lang-en hidden font-medium">Transformer Upgrades & Retrofits</span></span></li>
+      <li class="flex items-start"><i class="fa-solid fa-circle-check text-blue-600 mr-2 mt-1"></i>
+        <span><span class="lang-zh font-medium">诊断测试与故障维修</span><span class="lang-en hidden font-medium">Diagnostic Testing & Repair</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 产品展示 -->
+<section id="products" class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="text-2xl font-bold mb-6"><span class="lang-zh">产品展示</span><span class="lang-en hidden">Product Showcase</span></h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="group">
+      <img src="https://cdn.pixabay.com/photo/2020/07/14/11/33/substation-5403845_1280.jpg" alt="Transformer Substation" class="w-full rounded-lg shadow hover:scale-105 transition duration-300">
+      <div class="text-center text-sm mt-2"><span class="lang-zh">变电站变压器检修</span><span class="lang-en hidden">Substation Maintenance</span></div>
     </div>
-  </section>
-
-  <!-- 服务流程 Section -->
-  <section id="process" class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-bold mb-8 text-gray-900"><span class="lang-zh">服务流程</span><span class="lang-en hidden">Service Process</span></h2>
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 text-center">
-      <div class="flex flex-col items-center">
-        <div class="text-4xl text-blue-600 mb-2"><i class="fa-solid fa-comments"></i></div>
-        <p class="font-medium">
-          <span class="lang-zh">咨询<br>评估</span>
-          <span class="lang-en hidden">Consultation<br> & Evaluation</span>
-        </p>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="text-4xl text-blue-600 mb-2"><i class="fa-solid fa-clipboard-list"></i></div>
-        <p class="font-medium">
-          <span class="lang-zh">方案<br>制定</span>
-          <span class="lang-en hidden">Proposal<br> & Planning</span>
-        </p>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="text-4xl text-blue-600 mb-2"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-        <p class="font-medium">
-          <span class="lang-zh">维护<br>实施</span>
-          <span class="lang-en hidden">Maintenance<br> & Implementation</span>
-        </p>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="text-4xl text-blue-600 mb-2"><i class="fa-solid fa-circle-check"></i></div>
-        <p class="font-medium">
-          <span class="lang-zh">测试<br>验收</span>
-          <span class="lang-en hidden">Testing<br> & QA</span>
-        </p>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="text-4xl text-blue-600 mb-2"><i class="fa-solid fa-headset"></i></div>
-        <p class="font-medium">
-          <span class="lang-zh">交付<br>支持</span>
-          <span class="lang-en hidden">Delivery<br> & Support</span>
-        </p>
-      </div>
+    <div class="group">
+      <img src="https://cdn.pixabay.com/photo/2021/09/28/21/12/transformer-6665105_1280.jpg" alt="Power Transformer Yard" class="w-full rounded-lg shadow hover:scale-105 transition duration-300">
+      <div class="text-center text-sm mt-2"><span class="lang-zh">户外高压维护</span><span class="lang-en hidden">Outdoor HV Maintenance</span></div>
     </div>
-  </section>
-
-  <!-- 技术团队 Section -->
-  <section id="team" class="bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-bold mb-6 text-gray-900"><span class="lang-zh">技术团队</span><span class="lang-en hidden">Technical Team</span></h2>
-      <p class="leading-relaxed mb-4">
-        <span class="lang-zh">
-          我们的技术团队由资深的电气工程师组成，在变压器设计、制造和维护方面拥有丰富经验。他们持有专业认证，并定期接受最新行业技术培训。这支专业团队确保为客户提供前沿、高效、可靠的技术支持，是我们高质量服务的核心保障。
-        </span>
-        <span class="lang-en hidden">
-          Our technical team consists of experienced electrical engineers with extensive backgrounds in transformer design, manufacturing, and maintenance. They hold professional certifications and receive regular training in the latest industry technologies. This expert team ensures that we deliver cutting-edge, efficient, and reliable technical support to our clients, forming the cornerstone of our high-quality services.
-        </span>
-      </p>
-      <ul class="space-y-2 ml-4">
-        <li class="flex items-start">
-          <i class="fa-solid fa-award text-blue-600 mr-2 mt-1"></i>
-          <span>
-            <span class="lang-zh">多名高级工程师，行业经验丰富</span>
-            <span class="lang-en hidden">Multiple senior engineers with extensive industry experience</span>
-          </span>
-        </li>
-        <li class="flex items-start">
-          <i class="fa-solid fa-certificate text-blue-600 mr-2 mt-1"></i>
-          <span>
-            <span class="lang-zh">持有专业资质认证</span>
-            <span class="lang-en hidden">Holding professional qualifications and certifications</span>
-          </span>
-        </li>
-        <li class="flex items-start">
-          <i class="fa-solid fa-chalkboard-user text-blue-600 mr-2 mt-1"></i>
-          <span>
-            <span class="lang-zh">定期参加技术培训，掌握最新标准</span>
-            <span class="lang-en hidden">Regular technical training to stay up-to-date with latest standards</span>
-          </span>
-        </li>
-      </ul>
+    <div class="group">
+      <img src="https://cdn.pixabay.com/photo/2018/05/16/00/56/transformer-3405441_1280.jpg" alt="Transformer Close-up" class="w-full rounded-lg shadow hover:scale-105 transition duration-300">
+      <div class="text-center text-sm mt-2"><span class="lang-zh">部件升级改造</span><span class="lang-en hidden">Component Upgrades</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 产品展示 Section -->
-  <section id="products" class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-bold mb-6 text-gray-900"><span class="lang-zh">产品展示</span><span class="lang-en hidden">Product Showcase</span></h2>
-    <p class="mb-6">
-      <span class="lang-zh">以下展示我们在变压器维护及升级改造方面的一些项目实例：</span>
-      <span class="lang-en hidden">Below are some project examples of our transformer maintenance and upgrade work:</span>
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- 图片1 -->
-      <div class="group">
-        <img src="【15†】" alt="Transformer Substation" class="w-full rounded-lg shadow hover:scale-105 transition duration-300" />
-        <div class="text-center text-sm mt-2">
-          <span class="lang-zh">变电站变压器检修</span>
-          <span class="lang-en hidden">Substation Transformer Overhaul</span>
-        </div>
-      </div>
-      <!-- 图片2 -->
-      <div class="group">
-        <img src="【34†】" alt="Power Transformer Yard" class="w-full rounded-lg shadow hover:scale-105 transition duration-300" />
-        <div class="text-center text-sm mt-2">
-          <span class="lang-zh">户外高压变压器维护</span>
-          <span class="lang-en hidden">Outdoor High-Voltage Transformer Maintenance</span>
-        </div>
-      </div>
-      <!-- 图片3 -->
-      <div class="group">
-        <img src="【35†】" alt="Transformer Insulator Close-up" class="w-full rounded-lg shadow hover:scale-105 transition duration-300" />
-        <div class="text-center text-sm mt-2">
-          <span class="lang-zh">变压器部件升级改造</span>
-          <span class="lang-en hidden">Transformer Component Upgrade</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- 联系我们 -->
+<section id="contact" class="bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-6"><span class="lang-zh">联系我们</span><span class="lang-en hidden">Contact Us</span></h2>
+    <p><i class="fa-solid fa-phone text-blue-600 mr-2"></i><span class="lang-zh">电话：</span><span class="lang-en hidden">Phone:</span><a href="tel:021-12345678">021-12345678</a></p>
+    <p><i class="fa-solid fa-envelope text-blue-600 mr-2"></i><span class="lang-zh">邮箱：</span><span class="lang-en hidden">Email:</span><a href="mailto:contact@huiyielectric.com">contact@huiyielectric.com</a></p>
+    <p><i class="fa-solid fa-location-dot text-blue-600 mr-2"></i><span class="lang-zh">地址：上海市浦东新区电力大道88号</span><span class="lang-en hidden">Address: No.88 Dianli Avenue, Pudong, Shanghai</span></p>
+  </div>
+</section>
 
-  <!-- 联系我们 Section -->
-  <section id="contact" class="bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 py-12">
-      <h2 class="text-2xl font-bold mb-6 text-gray-900"><span class="lang-zh">联系我们</span><span class="lang-en hidden">Contact Us</span></h2>
-      <p class="mb-4">
-        <i class="fa-solid fa-phone text-blue-600 mr-2"></i>
-        <span class="lang-zh">电话：</span><span class="lang-en hidden">Phone: </span>
-        <a href="tel:021-12345678" class="hover:text-blue-600">021-12345678</a>
-      </p>
-      <p class="mb-4">
-        <i class="fa-solid fa-envelope text-blue-600 mr-2"></i>
-        <span class="lang-zh">邮箱：</span><span class="lang-en hidden">Email: </span>
-        <a href="mailto:contact@huiyielectric.com" class="hover:text-blue-600">contact@huiyielectric.com</a>
-      </p>
-      <p class="mb-4">
-        <i class="fa-solid fa-location-dot text-blue-600 mr-2"></i>
-        <span class="lang-zh">地址：上海市浦东新区电力大道88号</span>
-        <span class="lang-en hidden">Address: No.88 Dianli Avenue, Pudong, Shanghai, China</span>
-      </p>
-      <!-- 联系表单按钮（可链接到单独页或弹出） -->
-      <a href="#" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition">
-        <span class="lang-zh">在线留言</span>
-        <span class="lang-en hidden">Leave a Message</span>
-      </a>
-    </div>
-  </section>
+<!-- 页脚 -->
+<footer class="bg-gray-800 text-gray-200 py-6">
+  <div class="max-w-6xl mx-auto px-4 text-center text-sm">&copy; 2025 上海慧逸电气设计中心<span class="lang-en hidden">Shanghai Huiyi Electrical Design Center</span></div>
+</footer>
 
-  <!-- 页脚 Section -->
-  <footer class="bg-gray-800 text-gray-200">
-    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row md:justify-between text-sm">
-      <div class="mb-4 md:mb-0">
-        &copy; 2025 上海慧逸电气设计中心 
-        <span class="lang-en hidden">&copy; 2025 Shanghai Huiyi Electrical Design Center</span>
-      </div>
-      <div class="space-x-4">
-        <a href="#home" class="hover:underline"><span class="lang-zh">首页</span><span class="lang-en hidden">Home</span></a>
-        <a href="#about" class="hover:underline"><span class="lang-zh">公司简介</span><span class="lang-en hidden">About</span></a>
-        <a href="#contact" class="hover:underline"><span class="lang-zh">联系我们</span><span class="lang-en hidden">Contact</span></a>
-      </div>
-    </div>
-  </footer>
+<script>
+  document.getElementById('lang-zh-btn').classList.add('bg-blue-600','text-white');
+  function switchLang(lang) {
+    document.querySelectorAll('.lang-zh').forEach(el => el.classList.toggle('hidden', lang==='en'));
+    document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', lang!=='en'));
+    document.getElementById('lang-zh-btn').classList.toggle('bg-blue-600', lang==='zh');
+    document.getElementById('lang-zh-btn').classList.toggle('text-white', lang==='zh');
+    document.getElementById('lang-en-btn').classList.toggle('bg-blue-600', lang==='en');
+    document.getElementById('lang-en-btn').classList.toggle('text-white', lang==='en');
+  }
+</script>
 
-  <!-- 语言切换脚本 -->
-  <script>
-    // 默认激活中文按钮样式
-    document.getElementById('lang-zh-btn').classList.add('bg-blue-600','text-white');
-    // 切换语言函数
-    function switchLang(lang) {
-      var zhElements = document.querySelectorAll('.lang-zh');
-      var enElements = document.querySelectorAll('.lang-en');
-      if (lang === 'en') {
-        zhElements.forEach(el => el.classList.add('hidden'));
-        enElements.forEach(el => el.classList.remove('hidden'));
-        // 按钮状态样式更新
-        document.getElementById('lang-en-btn').classList.add('bg-blue-600','text-white');
-        document.getElementById('lang-zh-btn').classList.remove('bg-blue-600','text-white');
-      } else {
-        zhElements.forEach(el => el.classList.remove('hidden'));
-        enElements.forEach(el => el.classList.add('hidden'));
-        document.getElementById('lang-zh-btn').classList.add('bg-blue-600','text-white');
-        document.getElementById('lang-en-btn').classList.remove('bg-blue-600','text-white');
-      }
-    }
-  </script>
 </body>
 </html>
